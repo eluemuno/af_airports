@@ -4,7 +4,7 @@ from flask import Flask, request, session, render_template, redirect, url_for, f
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 
 app = Flask(__name__)
-app.secret_key = '1ce-2bc643c9-e236-4023-991e-8f9f22044fb9'
+app.secret_key = secret_key
 basedir = os.path.dirname(os.path.abspath(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'af_population.db')
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -132,4 +132,4 @@ class Airports(db.Model):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
